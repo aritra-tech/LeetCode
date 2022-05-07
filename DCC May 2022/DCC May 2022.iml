@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/1679-max-number-of-k-sum-pairs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/225-implement-stack-using-queues" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/581-shortest-unsorted-continuous-subarray" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/844-backspace-string-compare" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/905-sort-array-by-parity" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
