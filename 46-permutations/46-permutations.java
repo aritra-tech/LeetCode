@@ -1,26 +1,31 @@
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> list = new ArrayList<>();
-        backtrack(list, new ArrayList<>(), nums);
-        return list;
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(result,nums,0);
+        return result;
     }
-
-    private void backtrack(List<List<Integer>> resultList, ArrayList<Integer> tempSet, int[] nums) {
-
-        if (tempSet.size() == nums.length) {
-            resultList.add(new ArrayList<>(tempSet));
-            return;
+    
+    public void backtrack(List<List<Integer>> result , int[] nums, int s){
+        if(s == nums.length){
+            result.add(toList(nums));
         }
-
-
-        for (int i = 0; i < nums.length; i++) {
-
-            if (tempSet.contains(nums[i])) continue;
-            tempSet.add(nums[i]);
-            backtrack(resultList, tempSet, nums);
-            tempSet.remove(tempSet.size() - 1);  // v v v IMP step....this is where backtrack magic happens...
-
+        for(int i=s;i<nums.length;i++){
+            swap(i,s,nums);
+            backtrack(result,nums,s+1);
+            swap(i,s,nums);
         }
-
+    }
+    
+    public List<Integer> toList(int[] nums){
+        List<Integer> res = new ArrayList<>();
+        for(int i:nums)
+            res.add(i);
+        return res;
+    } 
+    
+    public void swap(int i, int j, int[] nums){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
