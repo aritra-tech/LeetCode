@@ -1,12 +1,13 @@
 class Solution {
     public int longestPalindrome(String s) {
-        HashMap<Character, Integer> map = new HashMap();
-        for(int i=0; i<s.length(); i++){
-            char temp = s.charAt(i);
-            if(map.get(temp) != null) map.remove(temp);
-            else map.put(temp, i);
+        int[] frequency = new int[128];        
+        for(char c:s.toCharArray()) {
+            ++frequency[c];
         }
-        if(map.size() <= 1) return s.length();
-        return s.length() - map.size() + 1;
+        int OddGroup = 0;
+        for(int i:frequency){
+            OddGroup += i & 1;
+        }
+        return s.length() - OddGroup + (OddGroup > 0 ? 1:0);  // Waiting for a better way to convert boolean into int  
     }
 }
