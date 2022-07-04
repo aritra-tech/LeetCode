@@ -24,7 +24,6 @@ class Node {
 class Solution {
     public Node connect(Node root) {
         if(root == null) return null;
-        Node L = root.left, R = root.right, N = root.next;
         if(root.left != null) {
             root.left.next = root.right;
             if(root.next != null) root.right.next = root.next.left;
