@@ -25,11 +25,11 @@ class Solution {
     public Node connect(Node root) {
         if(root == null) return null;
         Node L = root.left, R = root.right, N = root.next;
-        if(L != null) {
-            L.next = R;
-            if(N != null) R.next = N.left;
-            connect(L);
-            connect(R);
+        if(root.left != null) {
+            root.left.next = root.right;
+            if(root.next != null) root.right.next = root.next.left;
+            connect(root.left);
+            connect(root.right);
         }
         return root;
     }
